@@ -1,22 +1,42 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<< Title >>-->
+    <title>Heather Pomier</title>
+    <!--<< Favcion >>-->
+    <link rel="shortcut icon" href="assets/img/logo/favicon.png" />
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <!--<< Aos animation css >>-->
+    <link rel="stylesheet" href="assets/css/aos.css" />
+    <!--<< Main.css >>-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <slot />
+    <!--<< Jquery Latest >>-->
+    <script is:inline src="/assets/js/jquery-3.7.0.min.js"></script>
+    <!--<< Viewport Js >>-->
+    <script is:inline src="/assets/js/viewport.jquery.js"></script>
+    <!--<< Bootstrap Js >>-->
+    <script is:inline src="/assets/js/bootstrap.min.js"></script>
+    <!--<< Aos animation Js >>-->
+    <script is:inline src="/assets/js/aos.js"></script>
+    <!--<< Nice Select Js >>-->
+    <script is:inline src="/assets/js/jquery.nice-select.min.js"></script>
+    <!--<< Swiper Slide Js >>-->
+    <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+    <!--<< Swiper Bundle Js >>-->
+    <script is:inline src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!--<< magnific popup Js >>-->
+    <script is:inline src="/assets/js/odometer.min.js"></script>
+    <!--<< Odometer js Js >>-->
+    <script is:inline src="/assets/js/wow.min.js"></script>
+    <!--<< Wow Animation js >>-->
+    <script is:inline src="/assets/js/main.js"></script>
+    <!--<< Main.js >>-->
+  </body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
