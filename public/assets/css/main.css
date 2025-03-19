@@ -1970,6 +1970,7 @@ p {
     width: 250px;
     z-index: 999;
     transition: all 0.3s;
+
     background: var(--white);
     box-shadow: rgba(0, 0, 0, 0.15) 0px -1px 34px 0px;
     justify-content: center;
@@ -2003,6 +2004,7 @@ p {
     width: 250px;
     z-index: 999;
     transition: all 0.3s;
+
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.15) 0px -1px 34px 0px;
     justify-content: center;
@@ -2038,6 +2040,7 @@ p {
   .header-wrapper .main-menu li .sub-menu li a {
     font-size: 14px;
     font-weight: 500;
+    color: white;
   }
 }
 @media (min-width: 992px) {
@@ -2104,6 +2107,7 @@ p {
   .header-wrapper .main-menu li a {
     font-size: 14px;
     padding: 16px 2px;
+    color: white;
   }
 }
 .header-wrapper .menu__right__components {
