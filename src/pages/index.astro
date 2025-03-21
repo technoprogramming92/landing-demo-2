@@ -492,8 +492,21 @@ import Layout from "../layouts/Layout.astro";
     <h4 class="sponsor__title" data-aos="fade-down" data-aos-duration="1000">
       Our Impact in Numbers
     </h4>
-    <div class="swiper sponsor__wrap">
-      <div class="swiper-wrapper"></div>
+    <div class="counters">
+      <div>
+        <div class="counter">
+          <h1><span data-count="10">0</span>+</h1>
+          <p>Year of Experience</p>
+        </div>
+        <div class="counter">
+          <h1><span data-count="250">0</span>+</h1>
+          <p>Clients Served</p>
+        </div>
+        <div class="counter">
+          <h1><span data-count="500">0</span>+</h1>
+          <p>HME/DME Businesses Scaled</p>
+        </div>
+      </div>
     </div>
   </div>
   <!--<< Counter >>-->
@@ -986,37 +999,6 @@ import Layout from "../layouts/Layout.astro";
           <img src="assets/img/testimonial/testi-arrow.png" alt="img" />
         </div>
       </div>
-      <div class="sponsor__area pt-120">
-        <h4
-          class="sponsor__title"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
-          More than 100+ companies trusted us worldwide
-        </h4>
-        <div class="swiper sponsor__wrap">
-          <div class="swiper-wrapper">
-            <div class="sponsor__slide swiper-slide">
-              <img src="assets/img/testimonial/partner1.png" alt="img" />
-            </div>
-            <div class="sponsor__slide swiper-slide">
-              <img src="assets/img/testimonial/partner2.png" alt="img" />
-            </div>
-            <div class="sponsor__slide swiper-slide">
-              <img src="assets/img/testimonial/partner3.png" alt="img" />
-            </div>
-            <div class="sponsor__slide swiper-slide">
-              <img src="assets/img/testimonial/partner4.png" alt="img" />
-            </div>
-            <div class="sponsor__slide swiper-slide">
-              <img src="assets/img/testimonial/partner6.png" alt="img" />
-            </div>
-            <div class="sponsor__slide swiper-slide">
-              <img src="assets/img/testimonial/partner2.png" alt="img" />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
   <!--<< testimonial >>-->
@@ -1321,5 +1303,105 @@ import Layout from "../layouts/Layout.astro";
   <!--<< Scroll To Top >>-->
 </Layout>
 
-<script is:inline src="https://static.elfsight.com/platform/platform.js" async
-></script>
+<style>
+  .counters {
+    padding: 3em 2em;
+    background: #f7f7f7;
+    text-align: center;
+  }
+
+  .counters > div {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4em 2em;
+  }
+
+  .counter {
+    position: relative;
+  }
+
+  .counter h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+  }
+
+  .counter:not(:last-child)::before {
+    content: "";
+    background: rgb(20, 20, 20);
+    position: absolute;
+    width: 2px;
+    height: 3em;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1em;
+  }
+
+  @media screen and (max-width: 900px) and (min-width: 501px) {
+    .counters > div {
+      grid-template-columns: 1fr 1fr;
+    }
+    .counter:nth-child(2)::before {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .counters > div {
+      grid-template-columns: 1fr;
+      row-gap: 5em;
+    }
+
+    .counter:not(:last-child)::before {
+      width: 90%;
+      height: 2px;
+      top: initial;
+      right: inherit;
+      bottom: -3em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<script is:inline>
+  const counters = document.querySelectorAll(".counters span");
+  const container = document.querySelector(".counters");
+
+  let activated = false;
+
+  window.addEventListener("scroll", () => {
+    if (
+      pageYOffset > container.offsetTop - container.offsetHeight - 200 &&
+      activated === false
+    ) {
+      counters.forEach((counter) => {
+        counter.innerText = 0;
+        let count = 0;
+
+        function updateCount() {
+          const target = parseInt(counter.dataset.count);
+          if (count < target) {
+            count++;
+            counter.innerText = count;
+            setTimeout(updateCount, 10);
+          } else {
+            counter.innerText = target;
+          }
+        }
+        updateCount();
+
+        activated = true;
+      });
+    } else if (
+      pageYOffset < container.offsetTop - container.offsetHeight - 500 ||
+      (pageYOffset === 0 && activated === true)
+    ) {
+      counters.forEach((counter) => {
+        counter.innerText = 0;
+      });
+      activated = false;
+    }
+  });
+</script>

@@ -4769,10 +4769,10 @@ p {
 .footer__top .get__rightcontetn .social__footer:hover {
   background: var(--base);
   border-color: var(--base);
-  color: var(--title);
+  color: white;
 }
 .footer__top .get__rightcontetn .social__footer:hover i {
-  color: var(--title);
+  color: white;
 }
 @media (max-width: 1399px) {
   .footer__top .fl {
@@ -4841,6 +4841,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: white;
 }
 .copyright .toparrow i {
   font-size: 28px;
