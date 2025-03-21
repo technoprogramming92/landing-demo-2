@@ -1564,11 +1564,11 @@ p {
   margin-bottom: 1px;
   font-size: 28px;
   display: block;
-  color: var(--title);
+  color: white;
   transition: all 0.4s;
 }
 .hover__circle .box .textmore {
-  color: #282828;
+  color: white;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -2586,7 +2586,7 @@ p {
 }
 .about__section .singletab .tablinks li.active button {
   background: var(--base);
-  color: var(--title);
+  color: white;
 }
 @media (max-width: 991px) {
   .about__section .singletab .tablinks {
@@ -3076,7 +3076,7 @@ p {
 
 .common__icon {
   border-radius: 6px;
-  background-color: #2eca7f;
+  background-color: #c9f31d;
   min-width: 60px;
   height: 60px;
   display: flex;
@@ -3168,7 +3168,7 @@ p {
 }
 .pro__metting__content .about__contbox__item .icon i {
   font-size: 26px;
-  color: var(--title);
+  color: white;
 }
 .pro__metting__content .about__contbox__item a {
   color: var(--white);
